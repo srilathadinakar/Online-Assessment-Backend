@@ -7,17 +7,11 @@ import authRoute from "./Routes/authRoute.js";
 import queRoute from "./Routes/queRoute.js";
 import resultRoute from "./Routes/resultRoute.js";
 
-import cron from "node-cron";
-
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-cron.schedule('1,2,4,5 * * * *', () => {
-  //console.log('running every minute 1, 2, 4 and 5');
-});
 
 dbConfig();
 
